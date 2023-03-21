@@ -1,4 +1,4 @@
-package finalyearproject.nms_lite.discovery;
+package finalyearproject.nms_lite.model.discovery;
 
 import java.util.Optional;
 

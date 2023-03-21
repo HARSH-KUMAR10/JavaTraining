@@ -1,4 +1,6 @@
-package finalyearproject.nms_lite.discovery;
+package finalyearproject.nms_lite.model.discovery;
+
+import model.discovery.SSHClient;
 
 import java.util.Optional;
 

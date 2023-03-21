@@ -1,7 +1,9 @@
-package finalyearproject.nms_lite.discovery;
+package finalyearproject.nms_lite.view.discovery;
 
-import nms_lite.controller.discovery.DiscoveredProfileCheck;
-import nms_lite.controller.discovery.DiscoveredProfileController;
+import controller.discovery.DiscoveredProfileCheck;
+import controller.discovery.DiscoveredProfileController;
+import model.discovery.Profile;
+import model.discovery.SSHClient;
 
 import java.util.Map;
 import java.util.Optional;
