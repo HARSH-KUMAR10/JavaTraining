@@ -1,4 +1,4 @@
-package finalyearproject.nms_lite.controller.utilities;
+package nms_lite.controller.utilities;
 
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelExec;
@@ -35,11 +35,10 @@ public class SshUtility
                 }
                 if (session.isConnected())
                 {
-                    System.out.println("Connected");
                     Channel channel = session.openChannel("exec");
 
                     ((ChannelExec) channel)
-                            .setCommand("mpstat | awk 'NR==3 || NR==4';vmstat -w | awk 'NR==2 || NR==3'");
+                            .setCommand("free -w | awk 'NR==2';vmstat -w | awk 'NR==3'");
 
                     channel.setInputStream(null);
 

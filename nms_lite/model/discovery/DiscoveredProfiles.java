@@ -1,21 +1,19 @@
-package finalyearproject.nms_lite.model.discovery;
-
-import model.discovery.Profile;
+package nms_lite.model.discovery;
 
 import java.util.HashMap;
 
 public class DiscoveredProfiles
 {
-    public final HashMap<String, model.discovery.Profile> discoveredProfile = new HashMap<>();
+    public final HashMap<String, Profile> discoveredProfile = new HashMap<>();
 
-    public HashMap<String, model.discovery.Profile> getDiscoveredProfile()
+    public HashMap<String, Profile> getDiscoveredProfile()
     {
         return discoveredProfile;
     }
 
-    public model.discovery.Profile setDiscovery(String discoveryName, String ipAddress, String userName, String password, String port)
+    public Profile setDiscovery(String discoveryName, String ipAddress,long pollTime, String userName, String password, String port)
     {
         return this.discoveredProfile.putIfAbsent(discoveryName,
-                new Profile(discoveryName, ipAddress, userName, password, port));
+                new Profile(discoveryName, ipAddress,pollTime, userName, password, port));
     }
 }

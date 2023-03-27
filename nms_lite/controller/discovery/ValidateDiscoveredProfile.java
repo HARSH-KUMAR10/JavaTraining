@@ -1,4 +1,4 @@
-package finalyearproject.nms_lite.controller.discovery;
+package nms_lite.controller.discovery;
 
 import java.util.Map;
 import java.util.regex.Pattern;

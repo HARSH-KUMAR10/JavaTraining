@@ -1,7 +1,7 @@
-package finalyearproject.nms_lite.controller.discovery;
+package nms_lite.controller.discovery;
 
-import nms_lite.discovery.DiscoveredProfiles;
-import nms_lite.discovery.Profile;
+import nms_lite.model.discovery.DiscoveredProfiles;
+import nms_lite.model.discovery.Profile;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -15,9 +15,9 @@ public class DiscoveredProfileController
     static private final BufferedReader br =
             new BufferedReader(new InputStreamReader(System.in));
 
-    public static Profile setDiscoverProfile(String discoverName, String ipAddress, String username, String password, String port)
+    public static Profile setDiscoverProfile(String discoverName, String ipAddress,long pollTime, String username, String password, String port)
     {
-        return discoveredProfiles.setDiscovery(discoverName, ipAddress, username, password, port);
+        return discoveredProfiles.setDiscovery(discoverName, ipAddress,pollTime, username, password, port);
     }
 
     public static HashMap<String, Profile> getDiscoveredProfile()
@@ -139,5 +139,23 @@ public class DiscoveredProfileController
             System.out.println(exception.getMessage());
         }
         return port.get();
+    }
+
+    public static long setPollTime()
+    {
+        try
+        {
+            switch (br.readLine())
+            {
+                case "1" : return 10000;
+                case "2" : return 20000;
+                default : return 50000;
+            }
+        }
+        catch (Exception exception)
+        {
+            System.out.println(exception.getMessage());
+            return 50000;
+        }
     }
 }

@@ -1,13 +1,15 @@
-package finalyearproject.nms_lite.model.discovery;
-
-import model.discovery.SSHClient;
+package nms_lite.model.discovery;
 
 import java.util.Optional;
 
 public class Profile
 {
     private final Optional<String> discoveryName;
+
     private final Optional<String> ipAddress;
+
+    private final Optional<Long> pollTime;
+
     private final Optional<SSHClient> sshProfile;
 
     public Optional<String> getDiscoveryName()
@@ -25,9 +27,16 @@ public class Profile
         return sshProfile;
     }
 
-    Profile(String discoveryName, String ipAddress, String userName, String password, String port){
+    public Optional<Long> getPollTime()
+    {
+        return pollTime;
+    }
+
+    public Profile(String discoveryName, String ipAddress, long pollTime, String userName, String password, String port)
+    {
         this.discoveryName = Optional.ofNullable(discoveryName);
         this.ipAddress = Optional.ofNullable(ipAddress);
-        this.sshProfile = Optional.of(new SSHClient(userName,password,port));
+        this.pollTime = Optional.ofNullable(pollTime);
+        this.sshProfile = Optional.of(new SSHClient(userName, password, port));
     }
 }

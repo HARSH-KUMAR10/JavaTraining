@@ -1,4 +1,4 @@
-package finalyearproject.nms_lite.controller.discovery;
+package nms_lite.controller.discovery;
 
 import nms_lite.controller.utilities.FpingUtility;
 import nms_lite.controller.utilities.SshUtility;
@@ -18,7 +18,6 @@ public class DiscoveredProfileCheck
         }
         else
         {
-            System.out.println("connected to device");
             return response.split(" ")[4].split("/")[2].equalsIgnoreCase("0%,");
         }
     }
@@ -27,7 +26,6 @@ public class DiscoveredProfileCheck
     {
         if (SshUtility.sshUtility(username, ipAddress, password, port).size() != 0)
         {
-            System.out.println("Logged in");
             return true;
         }
         else

@@ -1,4 +1,4 @@
-package finalyearproject.nms_lite.controller.utilities;
+package nms_lite.controller.utilities;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -7,7 +7,6 @@ public class FpingUtility
 {
     public static String fpingUtility(String ipAddress)
     {
-
         String ret = "";
         try
         {
